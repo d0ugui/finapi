@@ -27,7 +27,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com)
 
-### Requisitos
+### ✔ Requisitos
 
 - [x] Deve ser possível criar uma conta
 - [x] Deve ser possível buscar o extrato bancário dos clientes
@@ -39,9 +39,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Deve ser possível deleter uma conta
 - [x] Deve ser possível retorna o balance
 
----
-
-### Regras de negócio
+### ⚠ Regras de negócio
 
 - [x] Não deve ser possível cadastrar uma conta com CPF já existente
 - [x] Não deve ser possível buscar extrato em uma conta não existente
@@ -49,8 +47,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Não deve ser possível fazer saque em uma conta não existente
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [x] Não deve ser possível excluir uma conta não existente
-
----
 
 ### 📝 License
 
