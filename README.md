@@ -18,6 +18,7 @@ $ npm install OR yarn
 $ npm dev OR yarn dev
 
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+```
 
 ### 🛠 Tecnologias
 
@@ -29,6 +30,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 
 ### Requisitos
+
 - [x] Deve ser possível criar uma conta
 - [x] Deve ser possível buscar o extrato bancário dos clientes
 - [x] Deve ser possível realizar um depósito
@@ -42,13 +44,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 
 ### Regras de negócio
+
 - [x] Não deve ser possível cadastrar uma conta com CPF já existente
 - [x] Não deve ser possível buscar extrato em uma conta não existente
 - [x] Não deve ser possível fazer depósito em uma conta não existente
 - [x] Não deve ser possível fazer saque em uma conta não existente
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [x] Não deve ser possível excluir uma conta não existente
-```
 
 ### 📝 License
 
