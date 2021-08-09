@@ -1,6 +1,6 @@
 ### 📖 Projeto
 
-O projeto consiste uma API que foi construída no curso de Node.js da Rocketseat. O projeto é resultado de aulas introdutórias quem apresentam e esclarecem os pílares do back-end para o estudante. Foram apresentados os métodos de requisição (HTTP Verbs), HTTP Codes, parâmetros das requisições (Header Params, Query Params, Route Params e Body Params), os conceitos de Middlewares e API Rest também foram difundidos.
+O projeto consiste em uma API que foi construída no curso de Node.js da Rocketseat. O projeto é resultado de aulas introdutórias quem apresentam e esclarecem os pílares do back-end. Foram apresentados os métodos de requisição (HTTP Verbs), HTTP Codes, parâmetros das requisições (Header Params, Query Params, Route Params e Body Params), os conceitos de Middlewares e API Rest também foram difundidos.
 
 ### 🎲 Rodando a API (servidor)
 
