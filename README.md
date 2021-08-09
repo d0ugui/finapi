@@ -27,8 +27,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com)
 
----
-
 ### Requisitos
 
 - [x] Deve ser possível criar uma conta
@@ -51,6 +49,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Não deve ser possível fazer saque em uma conta não existente
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [x] Não deve ser possível excluir uma conta não existente
+
+---
 
 ### 📝 License
 
