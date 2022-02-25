@@ -1,20 +1,27 @@
-const costumers = [
-  {
-    id: 1,
-    name: 'Douglas',
-    cpf: 44202893840,
-  },
-  {
-    id: 2,
-    name: 'Bruno',
-    cpf: 44202893844,
-  },
-];
+const AccountsRepository = require('../repositories/AccountsRepository');
 
 class AccountController {
   index(req, res) {
-    // Mostrar todos os registros
-    return res.status(201).json(costumers);
+    const accounts = AccountsRepository.findAll();
+    res.json(accounts);
+  }
+
+  show(req, res) {
+    const { id } = req.params;
+    const account = AccountsRepository.findById(id);
+
+    if (!account) {
+      return res.status(404);
+    }
+
+    return res.json(account);
+  }
+
+  store(req, res) {
+    const { cpf, name } = req.body;
+    const account = AccountsRepository.create(cpf, name);
+
+    return res.status(201).json(account);
   }
 }
 
