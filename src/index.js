@@ -1,5 +1,5 @@
-const { v4: uuidv4 } = require('uuid');
-const express = require('express');
+import { v4 as uuidv4 } from 'uuid';
+import express from 'express';
 
 const app = express();
 
@@ -10,7 +10,7 @@ const customers = [];
 // Middleware
 function verifyIfExistsAccountCPF(request, response, next) {
   const { cpf } = request.headers;
-  const customer = customers.find((customer) => customer.cpf === cpf);
+  const customer = customers.find((client) => client.cpf === cpf);
 
   if (!customer) {
     return response.status(400).json({ error: 'Customer not found' });
@@ -99,7 +99,7 @@ app.get('/statement/date', verifyIfExistsAccountCPF, (request, response) => {
   const dateFormat = new Date(`${date} 00:00`);
 
   const statement = customer.statement.filter(
-    (statement) => statement.created_at.toDateString()
+    (state) => state.created_at.toDateString()
       === new Date(dateFormat).toDateString(),
   );
 
