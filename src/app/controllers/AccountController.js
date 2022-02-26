@@ -19,9 +19,24 @@ class AccountController {
 
   store(req, res) {
     const { cpf, name } = req.body;
-    const account = AccountsRepository.create(cpf, name);
+    const account = AccountsRepository.createAccount(cpf, name);
+
+    return res.json(account);
+  }
+
+  update(req, res) {
+    const { name } = req.body;
+    const { id } = req.params;
+
+    const account = AccountsRepository.updateAccount(id, name);
 
     return res.status(201).json(account);
+  }
+
+  delete(req, res) {
+    const { account } = req;
+
+    res.json(AccountsRepository.deleteAccount(account));
   }
 }
 
