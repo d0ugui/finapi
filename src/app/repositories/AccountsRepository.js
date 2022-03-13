@@ -6,8 +6,9 @@ class AccountsRepository {
     return accounts;
   }
 
-  findById(id) {
-    const account = accounts.find((acc) => acc.id === id);
+  findById(cpf) {
+    const account = accounts.find((acc) => acc.cpf === cpf);
+
     return account;
   }
 
@@ -30,8 +31,8 @@ class AccountsRepository {
     return account;
   }
 
-  updateAccount(id, name) {
-    const newName = accounts.find((acc) => acc.id === id);
+  updateAccount(cpf, name) {
+    const newName = accounts.find((acc) => acc.cpf === cpf);
 
     if (newName) {
       newName.name = name;
@@ -40,10 +41,27 @@ class AccountsRepository {
     return newName;
   }
 
-  deleteAccount(account) {
-    accounts = accounts.filter((acc) => acc.id != account.id);
+  deleteAccount(id) {
+    accounts = accounts.filter((acc) => acc.id != id);
 
     return accounts;
+  }
+
+  deposit(id, description, amount) {
+    const statementOperation = {
+      description,
+      amount,
+      created_at: new Date(),
+      type: 'credit'
+    }
+
+    const accountDeposit = accounts.find((acc) => {
+      if (acc.id === id) {
+        acc.statement = [...acc.statement, statementOperation];
+      }
+    });
+
+    return statementOperation;
   }
 }
 

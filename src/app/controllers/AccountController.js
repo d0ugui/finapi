@@ -1,3 +1,4 @@
+const { response } = require('express');
 const AccountsRepository = require('../repositories/AccountsRepository');
 
 class AccountController {
@@ -7,8 +8,8 @@ class AccountController {
   }
 
   show(req, res) {
-    const { id } = req.params;
-    const account = AccountsRepository.findById(id);
+    const { account } = req;
+    const costumer = AccountsRepository.findById(account.cpf);
 
     if (!account) {
       return res.status(404);
@@ -26,17 +27,26 @@ class AccountController {
 
   update(req, res) {
     const { name } = req.body;
-    const { id } = req.params;
+    const { account: { cpf } } = req;
 
-    const account = AccountsRepository.updateAccount(id, name);
+    const costumer = AccountsRepository.updateAccount(cpf, name);
 
-    return res.status(201).json(account);
+    return res.status(201).json(costumer);
   }
 
   delete(req, res) {
-    const { account } = req;
+    const { account: { id } } = req;
 
-    res.json(AccountsRepository.deleteAccount(account));
+    res.json(AccountsRepository.deleteAccount(id));
+  }
+
+  deposit(req, res) {
+    const { description, amount } = req.body;
+    const { account: { id } } = req;
+
+    const depositSucess = AccountsRepository.deposit(id, description, amount);
+
+    return res.status(201).send(depositSucess);
   }
 }
 
