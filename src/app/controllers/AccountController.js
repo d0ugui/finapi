@@ -1,4 +1,3 @@
-const { response } = require('express');
 const AccountsRepository = require('../repositories/AccountsRepository');
 
 class AccountController {
@@ -9,17 +8,18 @@ class AccountController {
 
   show(req, res) {
     const { account } = req;
-    const costumer = AccountsRepository.findById(account.cpf);
+    const costumer = AccountsRepository.findByCpf(account.cpf);
 
-    if (!account) {
+    if (!account.cpf) {
       return res.status(404);
     }
 
-    return res.json(account);
+    return res.json(costumer);
   }
 
   store(req, res) {
     const { cpf, name } = req.body;
+
     const account = AccountsRepository.createAccount(cpf, name);
 
     return res.json(account);
@@ -35,18 +35,44 @@ class AccountController {
   }
 
   delete(req, res) {
-    const { account: { id } } = req;
+    const { account: { cpf } } = req;
 
-    res.json(AccountsRepository.deleteAccount(id));
+    res.json(AccountsRepository.deleteAccount(cpf));
+  }
+
+  balance(req, res) {
+    const { account } = req;
+
+    const balance = AccountsRepository.balance(account.statement);
+
+    return res.status(200).json(balance)
   }
 
   deposit(req, res) {
     const { description, amount } = req.body;
-    const { account: { id } } = req;
+    const { account: { cpf } } = req;
 
-    const depositSucess = AccountsRepository.deposit(id, description, amount);
+    const depositSucess = AccountsRepository.deposit(cpf, description, amount);
 
     return res.status(201).send(depositSucess);
+  }
+
+  withdraw(req, res) {
+    const { amount } = req.body;
+    const { account } = req;
+
+    const withdrawOperation = AccountsRepository.withdraw(account, amount);
+
+    return res.status(201).json(withdrawOperation)
+  }
+
+  statement(req, res) {
+    const { account: { cpf } } = req;
+    const { date } = req.query;
+
+    const statement = AccountsRepository.statement(cpf, date);
+
+    return res.json(statement);
   }
 }
 
