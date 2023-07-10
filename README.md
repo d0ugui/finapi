@@ -1,31 +1,37 @@
-### 📖 Projeto
+## 📖 Project
 
-O projeto consiste em uma API para controle financeiro que realiza as operações de (CRUD). Sendo assim, é possível criar uma conta, fazer um depósito, um saque, consultar saldo, atualizar dados e deletar uma conta. A finalidade do projeto é coloca em prática conceitos básicos do Node.js, como: Request, Reponse, HTTP Codes, Status Code, Params (Body, Query, Header e Route) e Middlewares. Fui além do planejado e implementei o Repository Pattern, que basicamente cria uma camada de abstração na aplicação centralizando o tratamento dos dados, facilitando assim futuras alterações e componetizando a aplicação de forma inteligente.
+This project is a produce of my studies in back-end with Node.js, on it i applicated all of concepts that i learned, since the basics, starting in http codes, status code, request params (body, query, header e route), middlewares and even a design pattern (repository pattern). In summary, the project consists in a financial API responsible to manage the user transactions.
 
-### 🧪 Tecnologias
-
-As seguintes ferramentas foram usadas na construção do projeto:
+## 🧪 Technologies
 
 [![My Skills](https://skillicons.dev/icons?i=js,nodejs,express)](https://skillicons.dev)
 
-### 🚀 Como executar
+## 🚀 Getting started
+
+Clone the project
 
 ```bash
-# Clone este repositório
 $ git clone <https://github.com/d0ugui/finapi.git>
-
-# Acesse a pasta do projeto no terminal/cmd
-$ cd finapi
-
-# Instale as dependências
-$ npm install or yarn
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm dev or yarn dev
-
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
-### 📝 License
+Enter in the project directory
 
-Esse projeto está sob a licença MIT.
+```bash
+$ cd finapi
+```
+
+Install dependencies
+
+```bash
+$ npm install or yarn
+```
+
+Run app
+
+```bash
+$ npm dev or yarn dev
+```
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
