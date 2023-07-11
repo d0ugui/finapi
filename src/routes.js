@@ -37,6 +37,5 @@ router.post('/withdraw', AccountExists, AccountController.withdraw);
 //* Statement with date
 router.get('/statement/date', AccountExists, AccountController.statement);
 
-
 //* Importando instância de rotas
 module.exports = router;

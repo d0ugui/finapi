@@ -45,7 +45,7 @@ class AccountController {
 
     const balance = AccountsRepository.balance(account.statement);
 
-    return res.status(200).json(balance)
+    return res.status(200).json(balance);
   }
 
   deposit(req, res) {
@@ -63,7 +63,7 @@ class AccountController {
 
     const withdrawOperation = AccountsRepository.withdraw(account, amount);
 
-    return res.status(201).json(withdrawOperation)
+    return res.status(201).json(withdrawOperation);
   }
 
   statement(req, res) {
